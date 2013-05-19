@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Vimeo jQuery pulgin test</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="../vimeo_oembed_playlist.js"></script>
+    <script src="jcarousel.min.js"></script>
+    <script src="main.js"></script>
+    <style>
+      #vimeo-playlist {
+        position: relative;
+        overflow: hidden;
+        /* You need at least a height, adjust this to your needs */
+        height: 100px;
+        width: 100px;
+      }
+
+      #vimeo-playlist-wrapper {
+        width: 100px;
+        height: 20000em;
+        position: absolute;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .vimeo-thumb {
+        float: left;
+      }
+    </style>
+</head>
+<body>
+  <!-- Video placeholders -->
+  <div id="vimeo-player"></div>
+  <div id="vimeo-playlist"></div>
+
+  <!-- Controls (you can provide your own ) -->
+  <a id="vimeo-playlist-prev" href="#">Prev</a>
+  <a id="vimeo-playlist-next" href="#">Next</a>
+
+  <span class="vimeo-vid">66341888</span>
+  <span class="vimeo-vid">66341887</span>
+</body>
+</html>
