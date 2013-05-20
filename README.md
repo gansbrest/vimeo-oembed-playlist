@@ -11,16 +11,16 @@ At the moment pluin support only individual videos, not albums, groups or chanel
 
 There is example folder with simple use case. Just clone and open vimeo_jquery_test.html in the browser.
 
-1. You need some html structrure, to specify video ids:
+1 You need some html structrure, to specify video ids:
 
 ```html
 <span class="vimeo-vid">66341888</span>
 <span class="vimeo-vid">66341887</span>
 ```
 
-2. Then include vimeo_oembed_playlist.js plugin.
+2 Then include vimeo_oembed_playlist.js plugin.
 
-3. In your main js file (main.js in the example) we intialize plugin
+3 In your main js file (main.js in the example) we intialize plugin
 
 ```javascript
 $(function() {
