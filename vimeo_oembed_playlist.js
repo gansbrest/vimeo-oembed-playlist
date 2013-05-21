@@ -76,7 +76,9 @@
 
       // Allow other plugins to manipulate rendered items
       // by returning to the caller function
-      callback();
+      if (typeof callback == 'function') {
+        callback();
+      }
     }
   };
 
