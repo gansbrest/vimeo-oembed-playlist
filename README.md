@@ -11,16 +11,16 @@ At the moment pluin support only individual videos, not albums, groups or chanel
 
 There is example folder with simple use case. Just clone and open vimeo_jquery_test.html in the browser.
 
-1. You need some html structrure, to specify video ids:
+1 - You need some html structrure, to specify video ids:
 
 ```html
 <span class="vimeo-vid">66341888</span>
 <span class="vimeo-vid">66341887</span>
 ```
 
-2. Then include vimeo_oembed_playlist.js plugin.
+2 - Then include vimeo_oembed_playlist.js plugin.
 
-3. In your main js file (main.js in the example) we intialize plugin
+3 - In your main js file (main.js in the example) we intialize plugin
 
 ```javascript
 $(function() {
@@ -30,7 +30,7 @@ $(function() {
   })
 });
 ```
-That's about it simplest use case. At this point we have all required html elements (player and playlist with thumbs) in the dom.
+That's about it for the simplest use case. At this point we have all required html elements (player and playlist with thumbs) in the dom.
 
 To turn all of this into real playlist you can use any other jquery plugin ( see example folder for jcarusel example ). You just need to initialize your 3rd party plugin inside callback function, which will be called only after all thumbs were added to the dom.
 
