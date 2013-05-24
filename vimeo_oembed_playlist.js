@@ -54,7 +54,7 @@
     }
 
     var render_playlist = function(videos_list) {
-      var thumb_title = '';
+      var thumb_title = thumb_html = '';
       $.each(videos_list, function(index, item) {
 
         var el_class = '';
@@ -66,13 +66,17 @@
           thumb_title = '<div class="vimeo-thumb-title">' + item.title + '</div>';
         }
 
-        $('#vimeo-playlist-wrapper').append('<div style="height:' + settings.thumb_height + 'px;width=' + settings.thumb_width + 'px" class="vimeo-thumb"><img class="' + el_class + '" data-video-src="' + encodeURIComponent(item.html) + '" height="' + settings.thumb_height + '" width="' + settings.thumb_width + '" src="' + item.thumbnail_url + '"/>' + thumb_title + '</div>');
+        if (settings.thumb_html) {
+          thumb_html = settings.thumb_html;
+        }
+
+        $('#vimeo-playlist-wrapper').append('<div style="height:' + settings.thumb_height + 'px;width=' + settings.thumb_width + 'px" class="vimeo-thumb ' + el_class + '" data-video-src="' + encodeURIComponent(item.html) + '"><img height="' + settings.thumb_height + '" width="' + settings.thumb_width + '" src="' + item.thumbnail_url + '"/>' + thumb_html + thumb_title + '</div>');
       });
 
-      $('.vimeo-thumb img').bind('click', function() {
+      $('.vimeo-thumb').bind('click', function() {
         if (!$(this).hasClass('active')) {
           // Reset active class pointers
-          $(this).parent().parent().find('img').removeClass('active');
+          $(this).parent().find('.vimeo-thumb').removeClass('active');
           $(this).addClass('active');
 
           render_player(decodeURIComponent($(this).attr('data-video-src')));
