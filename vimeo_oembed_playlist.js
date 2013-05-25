@@ -39,11 +39,13 @@
     });
 
     // Execute this function when all ajax requsts were completed
-    $.when.apply(this, promises_list).then(function() {
-      prepare_container();
-      render_player(videos_list[0].html);
-      render_playlist(videos_list);
-    });
+    if (promises_list.length > 0) {
+      $.when.apply(this, promises_list).then(function() {
+        prepare_container();
+        render_player(videos_list[0].html);
+        render_playlist(videos_list);
+      });
+    }
 
     var prepare_container = function() {
       settings.playlist_target.append('<div id="vimeo-playlist-wrapper"></div>');
